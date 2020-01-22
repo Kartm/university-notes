@@ -1,0 +1,145 @@
+\documentclass{article}
+%\usepackage{tikzpicture}
+\begin{document}
+
+\tableofcontents
+
+\section{Introduction}
+
+\subsection{Natural numbers}
+
+$N$ - natural numbers, $N = \{1, 2, 3, \dots\}$
+Operations: +, *
+\paragraph{Properties of addition and multiplication}
+\begin{itemize}
+    \item $a + b = b + a$ - commutative law for addition
+    \item $(a + b) + c = a + (b + c)$ - associative law for addition
+    \item $a * b = b * a$ - commutative law for multiplication
+    \item $(a * b) * c = a * (b * c)$ - associative law for multiplication
+    \item $(a + b) * c = ac + bc$ - distributive law
+\end{itemize}
+
+\subsection{Mathematical induction}
+
+\paragraph{Theorem:}\mbox{} \\
+If $A \subset N$ and\\
+\indent a) $1 \in A$\\
+\indent b) If $k \in A$, then $k + 1 \in A$\\
+then\\
+\indent $A = N$
+
+\paragraph{Theorem: The Principle of Mathematical Induction}\mbox{} \\
+If $p_1, p_2, \dots$ are statements (true/false) and\\
+\indent a) $p_1$ is true\\
+\indent b) If $p_k$ is true, then $p_{k+1}$ is also true\\
+then\\
+\indent all the statements $p_1, p_2, \dots$ are true\\
+\\
+\textbf{\textit{Proof:}}\\
+$Let A = \{k \in N: p_k\;is\;true\}$\\
+Clearly, if $1 \in A$ and if $k \in A$, then $k \neq 1 \in A$\\
+So $A = N$\\
+\\
+\textbf{\textit{Examples:}}
+\begin{itemize}
+    \item $1 + 2 + \dots + n = \frac{n(n + 1)}{2}$, $n \in N$\\
+    a) for $n = 1$: $1 = \frac{1(1 + 1)}{2}$\\
+    b) suppose for some $k$: $1 + 2 + \dots = \frac{k(k+1)}{2}$\\
+    then\\
+    $1 + 2 + \dots + (k + 1) = \frac{(k+1)(k+2)}{2}$\\
+    $1 + 2 + \dots + k + (k + 1) = \frac{(k+1)(k+2)}{2}$\\
+    so
+    $1 + 2 + \dots + n = \frac{n(n+1)}{2}$ for all $n \in N$\\
+\end{itemize}
+
+\paragraph{Theorem: The Generalized Principle of Mathematical Induction}\mbox{} \\
+If $p_1, p_2, \dots$ are statements (true/false) and\\
+\indent a) $p_{k_o}$ is true\\
+\indent b) If $p_k$ is true, then $p_{k+1}$ is also true\\
+then\\
+\indent all the statements $p_{k_o}, p_{k_o+1}, \dots$ are true\\
+\\
+
+\subsection{Sigma notation}
+\paragraph{Definition}\mbox{} \\
+If $a_1, a_2, \dots, a_n \in R$\\
+then their sum $a_1 + a_2 + \dots + a_n$ will be denoted by $\sum^{n}_{k=1}a_k$.
+\paragraph{Properties}
+\begin{itemize}
+    \item $\sum^{n}_{k=1}(a_k + b_k) = \sum^{n}_{k=1}(a_k) + \sum^{n}_{k=1}(b_k)$
+    \item $\sum^{n}_{k=1}(c*a_k) =  c*\sum^{n}_{k=1}(a_k)$
+\end{itemize}
+
+\subsection{Binomial expansion}
+\paragraph{Pascal's triangle}\mbox{}\\\\
+\newcommand{\ap}{\ensuremath{\swarrow\,\searrow}}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{ccccccccc}
+  &     &     &      & 1   &      &      &     & \\
+  &     &     &      & \ap &      &      &     & \\
+  &     &     & 1    &     &  1   &      &     & \\
+  &     &     & \ap  &     &  \ap &      &     & \\
+  &     & 1   &      & 2   &      & 1    &     & \\
+  &     & \ap &      & \ap &      & \ap  &     & \\
+  & 1   &     & 3    &     &  3   &      & 1   & \\
+  &\ap  &     & \ap  &     &  \ap &      & \ap & \\
+1 &     & 4   &      & 6   &      & 4    &     & 1
+\end{tabular}
+\paragraph{Binomial coefficient (Newton's symbol)}\mbox{}\\
+${n \choose k} = \frac{n!}{k!(n-k)!}$ - number of k-element subsets of n-element set\\
+\paragraph{Theorem: Newton's binomial expansion formula}\mbox{}\\
+$(a+b)^n={n \choose 0}a^{n}b^{0}+{n \choose 1}a^{n-1}b^{1}+\dots+{n \choose k}a^{n-k}b^{k}+\dots+{n \choose n}a^{0}b^{n}$\\
+$(a+b)^n=\sum^n_{k=0} {n \choose k}a^{n-k}b^k$
+
+\subsection{Logic}
+%TODO here
+\begin{displaymath}
+    \begin{array}{|c c|c|}
+        p & q & p \land q\\ % Use & to separate the columns
+        \hline % Put a horizontal line between the table header and the rest.
+        T & T & T\\
+        T & F & F\\
+        F & T & F\\
+        F & F & F\\
+    \end{array}
+\end{displaymath}
+
+\subsection{Quantifiers}
+%TODO here
+todo
+
+\section{Complex numbers}
+\subsection{Introduction}
+\paragraph{Definition}
+Complex number is a pair of real numbers.\\
+Examples: $(2,3)$, $\sqrt{2},5)$\\
+We will usually denote them by $z, w, \dots$.\\
+If $z=(x,y)$ ($x, y \in R$ - we can skip it)\\
+then $x$ is called the \textbf{real part} of \textbf{z} and it will be denoted by $Re z$, $y$ will be called the \textbf{imaginary part} of \textbf{z} and denoted by $Im z$.\\
+The set of all complex numbers will be denoted by $C$, so\\
+$C = \{(x, y): x, y \in R\}$
+\paragraph{Geometric interpretation of C}\mbox{}\\
+% \begin{tikzpicture}
+%     \begin{axis}[
+%     axis x line=center,
+%     axis y line=none,
+%     xmin=-3,xmax=3,
+%     ]
+%     \end{axis}
+% \end{tikzpicture}
+\begin{itemize}
+    \item points on a plane
+    \item vectors on a plane
+    \item free vectors (not starting at origin, but at any point)
+\end{itemize}
+\subsection{Algebra on complex numbers}\mbox{}\\
+\begin{itemize}
+    \item addition\\
+    If $z = (x_1, y_1), w = (x_2, y_2)$ then $z + w$ is defined as\\
+    $(x_1 + x_2, y_1 + y_2)$ (just like addition of vectors).
+    %TODO theorem
+    \item multiplication\\
+    If $z = (x_1, y_1), w = (x_2, y_2)$ then $z * w$ is defined as\\
+    $(x_1 x_2 - y_1 y_2,\;x_1 y_2 + x_2 y_1)$
+\end{itemize}
+\end{document}
