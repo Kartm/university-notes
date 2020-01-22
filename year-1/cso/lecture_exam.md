@@ -16,6 +16,12 @@
   - [XOR gate](#xor-gate)
     - [Alternatives](#alternatives-2)
 - [Describe the XNOR, NAND and NOR gates](#describe-the-xnor-nand-and-nor-gates)
+  - [XNOR gate](#xnor-gate)
+    - [Alternatives](#alternatives-3)
+  - [NAND gate](#nand-gate)
+    - [Alternatives](#alternatives-4)
+  - [NOR gate](#nor-gate)
+    - [Alternatives](#alternatives-5)
 - [Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)](#present-a-circuit-built-of-gates-that-will-perform-a-specific-function-depending-on-the-appropriate-combination-of-input-data)
 - [Describe the adder adding two bits, present its diagram](#describe-the-adder-adding-two-bits-present-its-diagram)
 - [Present a scheme of size comparator that comparing two binary values (equality, and which of them is larger) and describe comparators](#present-a-scheme-of-size-comparator-that-comparing-two-binary-values-equality-and-which-of-them-is-larger-and-describe-comparators)
@@ -73,19 +79,19 @@ Describe the AND, OR and XOR gates
 
 Implements logical conjunction. With inputs A and B and output C implements the logical expression C = A · B. Finds the minimum between two binary digits. C-like languages use the symbol & to denote bitwise AND.
 
- | A   | B   | Q   |
- | --- | --- | --- |
- | 0   | 0   | 0   |
- | 0   | 1   | 0   |
- | 1   | 0   | 0   |
- | 1   | 1   | 1   |
+ | A   | B   | A AND B |
+ | --- | --- | :-----: |
+ | 0   | 0   |    0    |
+ | 0   | 1   |    0    |
+ | 1   | 0   |    0    |
+ | 1   | 1   |    1    |
 
 ### Alternatives
 
 | NAND construction                                                                                                          | NOR construction                                                                                                         |
 | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/AND_from_NAND.svg/200px-AND_from_NAND.svg.png) | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/AND_from_NOR.svg/200px-AND_from_NOR.svg.png) |
-*If no specific AND gates are available, one can be made from NAND or NOR gates shown in the image below.*
+*If no specific AND gates are available, one can be made from NAND or NOR gates shown in the image above.*
 
 ## OR gate
 
@@ -93,12 +99,12 @@ Implements logical conjunction. With inputs A and B and output C implements the 
 
 Implements logical disjunction. With inputs A and B and output C implements the logical expression C = A + B. Finds the maximum between two binary digits. C-like languages use the symbol | to denote bitwise OR.
 
- | A   | B   | Q   |
- | --- | --- | --- |
- | 0   | 0   | 0   |
- | 0   | 1   | 1   |
- | 1   | 0   | 1   |
- | 1   | 1   | 1   |
+ | A   | B   | A OR B |
+ | --- | --- | :----: |
+ | 0   | 0   |   0    |
+ | 0   | 1   |   1    |
+ | 1   | 0   |   1    |
+ | 1   | 1   |   1    |
 
 ### Alternatives
 
@@ -113,12 +119,12 @@ Implements logical disjunction. With inputs A and B and output C implements the 
 
 Implements an exclusive or. With inputs A and B and output C implements the logical expression C = A ⊕ B. XOR represents the inequality function. C-like languages use the caret symbol ^ to denote bitwise XOR.
 
- | A   | B   | Q   |
- | --- | --- | --- |
- | 0   | 0   | 0   |
- | 0   | 1   | 1   |
- | 1   | 0   | 1   |
- | 1   | 1   | 0   |
+ | A   | B   | A XOR B |
+ | --- | --- | :-----: |
+ | 0   | 0   |    0    |
+ | 0   | 1   |    1    |
+ | 1   | 0   |    1    |
+ | 1   | 1   |    0    |
 
 ### Alternatives
 
@@ -129,6 +135,69 @@ Implements an exclusive or. With inputs A and B and output C implements the logi
 
 Describe the XNOR, NAND and NOR gates
 ===
+## XNOR gate
+
+![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Xnor-gate-en.svg/278px-Xnor-gate-en.svg.png)
+
+Implements logical equality. With inputs A and B and output C implements the logical expression C = A ⨀ B. C-like languages use the operator == to denote XNOR on booleans.
+
+ | A   | B   | A XNOR B |
+ | --- | --- | :------: |
+ | 0   | 0   |    1     |
+ | 0   | 1   |    0     |
+ | 1   | 0   |    0     |
+ | 1   | 1   |    1     |
+
+### Alternatives
+
+| NAND construction                                                                                                            | NOR construction                                                                                                           |
+| ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/XNOR_from_NAND.svg/380px-XNOR_from_NAND.svg.png) | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/XNOR_from_NOR.svg/300px-XNOR_from_NOR.svg.png) |
+*If no specific XNOR gates are available, one can be made from NAND or NOR gates shown in the image above.*
+
+## NAND gate
+
+![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/NAND_ANSI_Labelled.svg/120px-NAND_ANSI_Labelled.svg.png)
+
+The NAND is a universal, functionally complete gate: any boolean function can be implemented by using a combination of NAND gates. *This also applies to the NOR gate.*
+
+The function NAND(a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub>) is logically equivalent to NOT(a<sub>1</sub> AND a<sub>2</sub> AND ... AND a<sub>n</sub>).
+
+ | A   | B   | A NAND B |
+ | --- | --- | :------: |
+ | 0   | 0   |    1     |
+ | 0   | 1   |    1     |
+ | 1   | 0   |    1     |
+ | 1   | 1   |    0     |
+
+### Alternatives
+
+NOR construction |
+- |
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/NAND_from_NOR.svg/280px-NAND_from_NOR.svg.png) |
+*If no specific NAND gates are available, one can be made from NOR gates shown in the image above.*
+
+## NOR gate
+
+![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/NAND_ANSI_Labelled.svg/120px-NAND_ANSI_Labelled.svg.png)
+
+The NOR gate implements logical NOR. Just like NAND, it's a functionally complete gate: any boolean function can be implemented by using a combination of NOR gates.
+
+The function NAND(a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub>) is logically equivalent to NOT(a<sub>1</sub> AND a<sub>2</sub> AND ... AND a<sub>n</sub>).
+
+ | A   | B   | A NOR B |
+ | --- | --- | :-----: |
+ | 0   | 0   |    1    |
+ | 0   | 1   |    0    |
+ | 1   | 0   |    0    |
+ | 1   | 1   |    0    |
+
+### Alternatives
+
+NAND construction |
+- |
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/NOR_from_NAND.svg/280px-NOR_from_NAND.svg.png) |
+*If no specific NOR gates are available, one can be made from NAND gates shown in the image above.*
 
 Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)
 ===
