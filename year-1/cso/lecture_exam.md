@@ -1,12 +1,21 @@
 ## Quick reference
 
 - [Present the given number in the NKB, BCD, U1, U2 codes as positive and negative value](#present-the-given-number-in-the-nkb-bcd-u1-u2-codes-as-positive-and-negative-value)
+  - [NBC (NBK)- Natural Binary Code](#nbc-nbk--natural-binary-code)
+  - [Gray Code](#gray-code)
+  - [1's Complement (U1)](#1s-complement-u1)
+  - [2's Complement (U2)](#2s-complement-u2)
 - [Present the given number in hexadecimal code](#present-the-given-number-in-hexadecimal-code)
+  - [Hexadecimal code](#hexadecimal-code)
 - [Present the given number as negative in the 2'complement](#present-the-given-number-as-negative-in-the-2complement)
 - [Perform simple calculations for two numbers in the 1'complement](#perform-simple-calculations-for-two-numbers-in-the-1complement)
+  - [Subtraction in U1](#subtraction-in-u1)
 - [Perform simple calculations for two numbers in the 2'complement](#perform-simple-calculations-for-two-numbers-in-the-2complement)
+  - [Addition in U2](#addition-in-u2)
 - [Multiplication of two binary numbers](#multiplication-of-two-binary-numbers)
 - [Adding two numbers in the BCD and EXCESS-3 code](#adding-two-numbers-in-the-bcd-and-excess-3-code)
+  - [BCD](#bcd)
+  - [Excess-3](#excess-3)
 - [Negating numbers in the BCD and EXCESS-3 code](#negating-numbers-in-the-bcd-and-excess-3-code)
 - [Describe the AND, OR and XOR gates](#describe-the-and-or-and-xor-gates)
   - [AND gate](#and-gate)
@@ -49,24 +58,94 @@
 
 Present the given number in the NKB, BCD, U1, U2 codes as positive and negative value
 ===
+**Note for each one: It is important to leave the first bit of each 'open' to signify the sign.**
+## NBC (NBK)- Natural Binary Code
+It is important to leave the first bit of each 'open' to signify the sign.
+
+It is just a binary representation of a number with predetermined number of bits. Example:<br>
+67 into 8-bit natural binary code:<br>
+01000011
+
+## Gray Code
+It is obtained by shifting the NBC number by 1 to the left and performing XOR on the new number with the unshifted one and discarding the last bit of the original. Example: <br>
+001000011 - NBC<br>
+01000011 - NBC shifted<br>
+01100010 - Gray code<br>
+
+## 1's Complement (U1)
+To obtain this complement we need to take each bit of the number and switch to the opposite. Example:<br>
+01000011 - NBC<br>
+10111100 - 1's Complement
+
+## 2's Complement (U2)
+To obtain this complement we first need to get 1's complement then add 1. Example:<br>
+01000011 - NBC<br>
+10111100 -1's Complement<br>
+10111101 -2's Complement<br>
+
+**NOTE: Both in U1 and U2 a positive number is represented the same as NBC, negatives, as described above.**
 
 Present the given number in hexadecimal code
 ===
+## Hexadecimal code
+It is a number system of base 16, it shares numbers 0-9 with the decimal system, larger numbers are represented with letters A-F.
+
+The easiest method to convert a number into HEX is to first convert it into binary, then create groups of 4 bits, starting from bit standing at 2^0, and calculate the values. Example:<br>
+67 - decimal<br>
+01000011 - 8-bit NBC<br>
+0100 | 0011 - 2 groups of 4 bits<br>
+&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;3 - values of the groups<br>
+ 43 - HEX <br>
 
 Present the given number as negative in the 2'complement
 ===
+Following the instructions above: <br>
+67 - decimal positive<br>
+01000011 - 8-bit NBC<br>
+10111100 - 1's Complement<br>
+10111101 - 2's Complement = -67 in decimal <br>
 
 Perform simple calculations for two numbers in the 1'complement
 ===
+## Subtraction in U1
+It's just addition with one of the numbers 'flipped' to U1.
+Addition is the same as in NBC, but if there exists a carry it is added at the end. Example: <br>
+-67 10111100<br>
++68 01000100<br><br>
+1 00000000 - incorrect sum, carry<br>
+00000001 - correct sum after correction 
 
 Perform simple calculations for two numbers in the 2'complement
 ===
+Operations in U2 follow the same rules as in U1, except in the case of a carry existing, it is discarded.
+## Addition in U2
+Example:<br>
+-67 10111101<br>
++68 01000100<br><br>
+ 1 - carry is discarded<br>
+00000001 - correct sum <br>
 
 Multiplication of two binary numbers
 ===
+Numbers in binary are multiplied similarly to decimal, we simply rewrite the first number under every 1 of the second, shifting it, so it starts at the same 'spot' as the 1, and then adding them. Example:<br><br>
+ 67 01000011<br>
+ *5 00000101<br><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01000011<br>
+ 	&#43; 01000011<br>
+ &nbsp;&nbsp;&nbsp;0101001111 = 335 <br>
 
 Adding two numbers in the BCD and EXCESS-3 code
 ===
+## BCD
+In this code, each decimal digit is represented by 4 binary bits corresponding to that digit. Example:<br>
+67 - decimal<br>
+0110 0111 - BCD code <br>
+
+## Excess-3
+It is a modified BCD code, instead of representing the digit itself, we represent digit greater than original by 3. Example:<br>
+67 - decimal<br>
+9 10 - digits increased by 3<br>
+1001 1010 - Excess-3 <br>
 
 Negating numbers in the BCD and EXCESS-3 code
 ===
