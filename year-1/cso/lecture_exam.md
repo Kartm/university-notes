@@ -243,7 +243,7 @@ Negating numbers in the BCD and EXCESS-3 code
 ===
 We negate a Excess-3 or BCD by performing 2's compliment on it.
 
-**NOTE:** in most cases the first bit of a number written in some sort of binary notation signifies the sign: 1 being negative, and 0 positive, here it is no exception .
+**NOTE:** in most cases the first bit of a number written in some sort of binary notation signifies the sign: 1 being negative, and 0 positive, here it is no exception.
 
 Describe the AND, OR and XOR gates
 ===
@@ -384,6 +384,7 @@ Present a circuit built of gates that will perform a specific function (dependin
 ### Example 1
 #### Truth table
 | Inputs | Output at
+
 | A   | B   | C   | D   | Q   |
 | --- | --- | --- | --- | --- |
 | 0   | 0   | 1   | 0   | 0   |
@@ -396,6 +397,7 @@ Present a circuit built of gates that will perform a specific function (dependin
 ### Example 2
 #### Truth table
 | Inputs | Intermediates | Output
+
 | B   | A   | A.B | A&#773;‾₊&#773; B&#773; | Q   |
 | --- | --- | --- | ----------------------- | --- |
 | 0   | 0   | 0   | 1                       | 1   |
@@ -655,7 +657,7 @@ So our original function is now: f = X1 * X2 + X1' * X3 + X2 * X3
 *****
 
 Sources:
-- electronics-tutorials.ws
+- https://electronics-tutorials.ws
 - wikipedia.org
 - quora.com
 - en.wikibooks.org
