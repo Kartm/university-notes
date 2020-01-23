@@ -1,7 +1,7 @@
 ## Quick reference
 
 - [Present the given number in the NKB, BCD, U1, U2 codes as positive and negative value](#present-the-given-number-in-the-nkb-bcd-u1-u2-codes-as-positive-and-negative-value)
-  - [NBC (NBK)- Natural Binary Code](#nbc-nbk--natural-binary-code)
+  - [NBC (NBK) - Natural Binary Code](#nbc-nbk---natural-binary-code)
   - [Gray Code](#gray-code)
   - [1's Complement (U1)](#1s-complement-u1)
   - [2's Complement (U2)](#2s-complement-u2)
@@ -50,8 +50,16 @@
   - [Demultiplexer](#demultiplexer)
 - [Present a Karnaugh map for a given function, minimize it, write canonical normal forms (product and summative) forms of a function after minimizing it, draw a diagram](#present-a-karnaugh-map-for-a-given-function-minimize-it-write-canonical-normal-forms-product-and-summative-forms-of-a-function-after-minimizing-it-draw-a-diagram)
   - [Karnaugh map](#karnaugh-map)
-  - [Minimized function](#minimized-function)
-  - [Diagram of the minimized function](#diagram-of-the-minimized-function)
+  - [Example: K-map for an OR gate](#example-k-map-for-an-or-gate)
+    - [1. Truth table of an OR gate<br>](#1-truth-table-of-an-or-gatebr)
+    - [2. Karnaugh map of the truth table<br>](#2-karnaugh-map-of-the-truth-tablebr)
+    - [3. Grouping](#3-grouping)
+    - [Minimized function](#minimized-function)
+  - [Example: K-map of a truth table](#example-k-map-of-a-truth-table)
+    - [Truth table](#truth-table)
+    - [K-map](#k-map)
+    - [Minimized function](#minimized-function-1)
+    - [Diagram](#diagram)
 - [Describe static-hazards](#describe-static-hazards)
   - [Static hazard](#static-hazard)
   - [Example of a static hazard](#example-of-a-static-hazard)
@@ -59,7 +67,7 @@
 Present the given number in the NKB, BCD, U1, U2 codes as positive and negative value
 ===
 **Note for each one: It is important to leave the first bit of each 'open' to signify the sign.**
-## NBC (NBK)- Natural Binary Code
+## NBC (NBK) - Natural Binary Code
 It is important to leave the first bit of each 'open' to signify the sign.
 
 It is just a binary representation of a number with predetermined number of bits. Example:<br>
@@ -80,8 +88,8 @@ To obtain this complement we need to take each bit of the number and switch to t
 ## 2's Complement (U2)
 To obtain this complement we first need to get 1's complement then add 1. Example:<br>
 01000011 - NBC<br>
-10111100 -1's Complement<br>
-10111101 -2's Complement<br>
+10111100 - 1's Complement<br>
+10111101 - 2's Complement<br>
 
 **NOTE: Both in U1 and U2 a positive number is represented the same as NBC, negatives, as described above.**
 
@@ -345,13 +353,59 @@ todo
 Present a Karnaugh map for a given function, minimize it, write canonical normal forms (product and summative) forms of a function after minimizing it, draw a diagram
 ===
 ## Karnaugh map
-todo
+Karnaugh map or K-map is a special form of a truth table, enabling easier pattern recognition, it is used to simplify Boolean expressions. 
 
-## Minimized function
-todo
+K-maps can be used for functions of up to 4 variables. <br>It is important that the inputs only change by 1 bit from 1 to another.
 
-## Diagram of the minimized function
-todo
+## Example: K-map for an OR gate
+### 1. Truth table of an OR gate<br>
+<img src="images/or-truth-table.png" style="max-width: 300px;">
+<br><br>
+
+### 2. Karnaugh map of the truth table<br>
+<img src="images/or-k-map-1.png" style="max-width: 300px;">
+<br><br>
+
+### 3. Grouping
+Rules of grouping:
+- A group can only contain 1s, not 0s
+- A group can only be a horizontal or vertical line or a square
+- A group must contain 2^n 1s (1,2,4,8,etc.)
+- Groups may overlap
+- Groups may wrap around a table 
+  
+<img src="images/or-k-map-2.png" style="max-width: 400px;">
+<br><br>
+<img src="images/or-k-map-3.png" style="max-width: 400px;">
+
+
+### Minimized function
+When writing a function using groups we use *(AND) for interactions within a group and +(OR) for interactions between groups.
+
+## Example: K-map of a truth table
+### Truth table
+| A   | B   | C   | F   |
+| --- | --- | --- | --- |
+| 0   | 0   | 0   | 0   |
+| 0   | 0   | 1   | 0   |
+| 0   | 1   | 0   | 1   |
+| 0   | 1   | 1   | 0   |
+| 1   | 0   | 0   | 1   |
+| 1   | 0   | 1   | 1   |
+| 1   | 1   | 0   | 1   |
+| 1   | 1   | 1   | 0   |
+
+### K-map
+| C\AB | 00  | 01  | 11  | 10  |
+| ---- | --- | --- | --- | --- |
+| 0    | 0   | 1   | 1   | 1   |
+| 1    | 0   | 0   | 0   | 1   |
+
+### Minimized function
+(B*(~C))+(A*(~B))
+
+### Diagram
+<img src="images/function-diagram-example.png" style="max-width: 400px">
 
 Describe static-hazards
 ===
