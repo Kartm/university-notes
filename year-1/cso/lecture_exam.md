@@ -35,6 +35,12 @@
   - [NOR gate](#nor-gate)
     - [Alternatives](#alternatives-5)
 - [Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)](#present-a-circuit-built-of-gates-that-will-perform-a-specific-function-depending-on-the-appropriate-combination-of-input-data)
+    - [Example 1](#example-1)
+      - [Truth table](#truth-table)
+      - [Circuit diagram](#circuit-diagram)
+    - [Example 2](#example-2)
+      - [Truth table](#truth-table-1)
+      - [Circuit diagram](#circuit-diagram-1)
 - [Describe the adder adding two bits (half-adder), present its diagram](#describe-the-adder-adding-two-bits-half-adder-present-its-diagram)
   - [Symbol](#symbol)
   - [Circuit](#circuit)
@@ -56,11 +62,11 @@
   - [D flip-flop](#d-flip-flop)
     - [Symbol](#symbol-2)
     - [Diagram](#diagram-1)
-    - [Truth table](#truth-table)
+    - [Truth table](#truth-table-2)
   - [T flip-flop](#t-flip-flop)
     - [Symbol](#symbol-3)
-    - [Circuit diagram](#circuit-diagram)
-    - [Truth table](#truth-table-1)
+    - [Circuit diagram](#circuit-diagram-2)
+    - [Truth table](#truth-table-3)
 - [Describe the multiplexer and demultiplexer](#describe-the-multiplexer-and-demultiplexer)
   - [Multiplexer](#multiplexer)
   - [Demultiplexer](#demultiplexer)
@@ -356,8 +362,29 @@ The function NAND(a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub>) is logically
 
 Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)
 ===
+### Example 1
+#### Truth table
+| Inputs | Output at
+| A   | B   | C   | D   | Q   |
+| --- | --- | --- | --- | --- |
+| 0   | 0   | 1   | 0   | 0   |
+| 0   | 1   | 1   | 1   | 1   |
+| 1   | 0   | 1   | 1   | 1   |
+| 1   | 1   | 0   | 0   | 1   |
+#### Circuit diagram
+![](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/boolean-boo6.gif)
 
-todo
+### Example 2
+#### Truth table
+| Inputs | Intermediates | Output
+| B   | A   | A.B | A&#773;‾₊&#773; B&#773; | Q   |
+| --- | --- | --- | ----------------------- | --- |
+| 0   | 0   | 0   | 1                       | 1   |
+| 0   | 1   | 0   | 0                       | 0   |
+| 1   | 0   | 0   | 0                       | 0   |
+| 1   | 1   | 1   | 0                       | 1   |
+#### Circuit diagram
+![](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/boolean-boo6.gif)
 
 Describe the adder adding two bits (half-adder), present its diagram
 ===
@@ -550,3 +577,12 @@ If no delays were to occur, then the circuit would function normally. However, n
 Now we know roughly how the hazard is occurring, for a clearer picture and the solution on how to solve this problem, we would look to the Karnaugh map. The two gates are shown by solid rings, and the hazard can be seen under the dashed ring. A theorem proved by Huffman tells us that by adding a redundant loop 'X2X3' this will eliminate the hazard.
 
 So our original function is now: f = X1 * X2 + X1' * X3 + X2 * X3
+
+*****
+
+Sources:
+- electronics-tutorials.ws
+- wikipedia.org
+- quora.com
+- en.wikibooks.org
+- hyperphysics.phy-astr.gsu.edu
