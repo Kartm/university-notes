@@ -69,23 +69,23 @@
     - [Truth table](#truth-table-3)
 - [Describe the multiplexer and demultiplexer](#describe-the-multiplexer-and-demultiplexer)
   - [Multiplexer](#multiplexer)
-    - [**2-to-1 multiplexer**](#2-to-1-multiplexer)
+    - [2-to-1 multiplexer](#2-to-1-multiplexer)
       - [Symbol](#symbol-4)
       - [Circuit diagram](#circuit-diagram-3)
       - [Boolean equation](#boolean-equation)
       - [Truth table](#truth-table-4)
-    - [**4-to-1 multiplexer**](#4-to-1-multiplexer)
+    - [4-to-1 multiplexer](#4-to-1-multiplexer)
       - [Symbol](#symbol-5)
       - [Circuit diagram](#circuit-diagram-4)
       - [Boolean equation](#boolean-equation-1)
       - [Truth table](#truth-table-5)
   - [Demultiplexer](#demultiplexer)
-    - [**1-to-2 demultiplexer**](#1-to-2-demultiplexer)
+    - [1-to-2 demultiplexer](#1-to-2-demultiplexer)
       - [Symbol](#symbol-6)
       - [Circuit diagram](#circuit-diagram-5)
       - [Boolean equation](#boolean-equation-2)
       - [Truth table](#truth-table-6)
-    - [**1-to-4 demultiplexer**](#1-to-4-demultiplexer)
+    - [1-to-4 demultiplexer](#1-to-4-demultiplexer)
       - [Symbol](#symbol-7)
       - [Circuit diagram](#circuit-diagram-6)
       - [Truth table](#truth-table-7)
@@ -230,14 +230,14 @@ with them and subtract 0011 from the groups which have not produced a carry duri
    
 <br>
 Example:<br>
-1001 1010 67(in Excess-3)<br>
-0101 1100 29(in Excess-3)<br>
+1001 1010 67 (in Excess-3)<br>
+0101 1100 29 (in Excess-3)<br>
 
 1111 &nbsp;&nbsp;0110 the left group did not produce a carry we subtract 0011 from it<br>
 -0011 +0011
 the right one did create a carry so we add 0011
 
-1100 1001 96(written in Excess-3)
+1100 1001 96 (written in Excess-3)
 
 Negating numbers in the BCD and EXCESS-3 code
 ===
@@ -517,7 +517,7 @@ Multiplexer (or mux), also known as a data selector, is a device that selects be
 
 Multiplexers are mainly used to increase the amount of data that can be sent over the network within a certain amount of time and bandwidth. Multiplexers can also be used to implement Boolean functions of multiple variables.
 
-### **2-to-1 multiplexer**
+### 2-to-1 multiplexer
 
 #### Symbol
 ![](https://www.electronicshub.org/wp-content/uploads/2015/07/2-to-1-MUX.jpg)
@@ -531,7 +531,7 @@ Multiplexers are mainly used to increase the amount of data that can be sent ove
 #### Truth table
 ![](https://www.electronicshub.org/wp-content/uploads/2015/07/2-to-1-MUX-truth-table.jpg)
 
-### **4-to-1 multiplexer**
+### 4-to-1 multiplexer
 
 #### Symbol
 ![](https://www.electronicshub.org/wp-content/uploads/2015/07/4-to-1-MUX.jpg)
@@ -549,7 +549,7 @@ Multiplexers are mainly used to increase the amount of data that can be sent ove
 ## Demultiplexer
 A demultiplexer (or demux) is a device taking a single input and selecting signals of the output of the compatible mux, which is connected to the single input, and a shared selection line. A multiplexer is often used with a complementary demultiplexer on the receiving end. Can be considered as a single-input, multiple-output switch.
 
-### **1-to-2 demultiplexer**
+### 1-to-2 demultiplexer
 
 #### Symbol
 ![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-2-demux.jpg)
@@ -563,7 +563,7 @@ A demultiplexer (or demux) is a device taking a single input and selecting signa
 #### Truth table
 ![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-2-demux-truth-table.jpg)
 
-### **1-to-4 demultiplexer**
+### 1-to-4 demultiplexer
 
 #### Symbol
 ![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-4-Demux.jpg)
@@ -658,7 +658,7 @@ So our original function is now: f = X1 * X2 + X1' * X3 + X2 * X3
 
 Sources:
 - https://electronics-tutorials.ws
-- wikipedia.org
-- quora.com
-- en.wikibooks.org
-- hyperphysics.phy-astr.gsu.edu
+- https://wikipedia.org
+- https://quora.com
+- https://en.wikibooks.org
+- https://hyperphysics.phy-astr.gsu.edu
