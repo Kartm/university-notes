@@ -36,25 +36,31 @@
     - [Alternatives](#alternatives-5)
 - [Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)](#present-a-circuit-built-of-gates-that-will-perform-a-specific-function-depending-on-the-appropriate-combination-of-input-data)
 - [Describe the adder adding two bits (half-adder), present its diagram](#describe-the-adder-adding-two-bits-half-adder-present-its-diagram)
-  - [Diagram](#diagram)
+  - [Symbol](#symbol)
   - [Circuit](#circuit)
   - [Description](#description)
 - [Present a scheme of size comparator that comparing two binary values (equality, and which of them is larger) and describe comparators](#present-a-scheme-of-size-comparator-that-comparing-two-binary-values-equality-and-which-of-them-is-larger-and-describe-comparators)
   - [Comparator](#comparator)
   - [One-bit binary full comparator](#one-bit-binary-full-comparator)
-    - [Diagram](#diagram-1)
-    - [Circuit](#circuit-1)
+    - [Symbol](#symbol-1)
+    - [Diagram](#diagram)
 - [Draw a symbol, diagram with gates and describe how the SR latch works](#draw-a-symbol-diagram-with-gates-and-describe-how-the-sr-latch-works)
   - [Circuit symbol](#circuit-symbol)
   - [Diagram with two NOR gates](#diagram-with-two-nor-gates)
   - [Description](#description-1)
       - [Race condition](#race-condition)
 - [Describe the SR flip-flop](#describe-the-sr-flip-flop)
-  - [The circuit symbol and the diagram](#the-circuit-symbol-and-the-diagram)
-  - [Description](#description-2)
+    - [Description](#description-2)
+    - [Symbol and circuit diagram](#symbol-and-circuit-diagram)
 - [Describe the D flip-flop and T flip-flop](#describe-the-d-flip-flop-and-t-flip-flop)
   - [D flip-flop](#d-flip-flop)
+    - [Symbol](#symbol-2)
+    - [Diagram](#diagram-1)
+    - [Truth table](#truth-table)
   - [T flip-flop](#t-flip-flop)
+    - [Symbol](#symbol-3)
+    - [Circuit diagram](#circuit-diagram)
+    - [Truth table](#truth-table-1)
 - [Describe the multiplexer and demultiplexer](#describe-the-multiplexer-and-demultiplexer)
   - [Multiplexer](#multiplexer)
   - [Demultiplexer](#demultiplexer)
@@ -345,9 +351,11 @@ NAND construction |
 Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)
 ===
 
+todo
+
 Describe the adder adding two bits (half-adder), present its diagram
 ===
-## Diagram
+## Symbol
 <img src="images/half-adder-diagram.png" style="max-width: 400px">
 
 ## Circuit
@@ -370,10 +378,10 @@ Present a scheme of size comparator that comparing two binary values (equality, 
 Takes two numbers as input in binary form and determines whether one number is greater than, less than or equal to the other number. Comparators are used in CPUs and microcontrollers.
 
 ## One-bit binary full comparator
-### Diagram
+### Symbol
 ![](https://i.stack.imgur.com/8ydzU.png)
 
-### Circuit
+### Diagram
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/One_Bit_Comparator.png/220px-One_Bit_Comparator.png)<br>
 *An example utilizing NOT, AND and XNOR gates*
 
@@ -404,24 +412,49 @@ The latch is being told to simultaneously produce a high Q and a low Q. This pro
 
 Describe the SR flip-flop
 ===
-## The circuit symbol and the diagram
-![](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/sequential-seq1.gif)
-    
-## Description
-Flip-flop is a pair of latches (master and slave flop). 
+### Description
+It's very similar to a SR latch gate. The basic difference is that SR flip-flop has a gating or clocking mechanism.
 
-todo
+The output is changed (i.e. the stored data is changed) only when you provide an active clock signal to input EN ("Enable Input"). Otherwise, even if the S or R is active the data will not change. 
+
+### Symbol and circuit diagram
+![](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/sequential-seq16.gif)
 
 Describe the D flip-flop and T flip-flop
 ===
 ## D flip-flop
-The D-type flip-flop is a modified Set-Reset flip-flop with the addition of an inverter to prevent the S and R inputs from being at the same logic level.
+The D-type flip-flop is a modified Set-Reset flip-flop with the addition of an inverter to prevent the S and R inputs from being at the same logic level. 
 
+The D flip-flop captures the value of the D-input at a definite portion of the clock cycle (such as the rising edge of the clock). That captured value becomes the Q output. At other times, the output Q does not change. The D flip-flop can be viewed as a memory cell.
+
+### Symbol
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/D-Type_Flip-flop.svg/100px-D-Type_Flip-flop.svg.png)
+
+### Diagram
 ![](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/sequential-seq6.gif)
 
-## T flip-flop
+### Truth table
+| Clock       | D   | Q<sub>next</sub> |
+| ----------- | --- | ---------------- |
+| Rising edge | 0   | 0                |
+| Rising edge | 1   | 1                |
+| Non-rising  | X   | Q                |
 
-todo
+(X denotes a don't care condition, meaning the signal is irrelevant)
+
+## T flip-flop
+T flip-flop is also known as "Toggle flip-flop". It acts like a toggle switch. Toggling means ‘Changing the next state output to complement of the present state output’. The main disadvantage of T flip – flop is that the state of the flip – flop at an applied trigger pulse is known only when the previous state is known.
+
+As each incoming trigger alternately changes the set and reset inputs, the flip – flop toggles. So to complete one full cycle of output wave form it need two triggers. This means that the T flip flop produces the output at exactly half of the frequency of input frequency. So a T flip – flops will act as “Frequency Divider Circuit”.
+
+### Symbol
+<img src="https://www.electronicshub.org/wp-content/uploads/2015/06/Symbol-of-T-flip-flop.jpg" style="max-width: 400px;">
+
+### Circuit diagram
+<img src="https://www.electronicshub.org/wp-content/uploads/2015/06/Circuit-diagram-of-T-flip-flop-using-SR-latch.jpg" style="max-width: 400px;">
+
+### Truth table
+<img src="https://www.electronicshub.org/wp-content/uploads/2015/06/tff.jpg" style="max-width: 400px;">
 
 Describe the multiplexer and demultiplexer
 ===
