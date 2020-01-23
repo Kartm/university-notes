@@ -5,6 +5,9 @@
   - [Gray Code](#gray-code)
   - [1's Complement (U1)](#1s-complement-u1)
   - [2's Complement (U2)](#2s-complement-u2)
+- [BCD and EXCESS-3 codes](#bcd-and-excess-3-codes)
+  - [BCD](#bcd)
+  - [Excess-3](#excess-3)
 - [Present the given number in hexadecimal code](#present-the-given-number-in-hexadecimal-code)
   - [Hexadecimal code](#hexadecimal-code)
 - [Present the given number as negative in the 2'complement](#present-the-given-number-as-negative-in-the-2complement)
@@ -14,8 +17,8 @@
   - [Addition in U2](#addition-in-u2)
 - [Multiplication of two binary numbers](#multiplication-of-two-binary-numbers)
 - [Adding two numbers in the BCD and EXCESS-3 code](#adding-two-numbers-in-the-bcd-and-excess-3-code)
-  - [BCD](#bcd)
-  - [Excess-3](#excess-3)
+  - [Addition in BCD](#addition-in-bcd)
+  - [Addition in EXCESS-3](#addition-in-excess-3)
 - [Negating numbers in the BCD and EXCESS-3 code](#negating-numbers-in-the-bcd-and-excess-3-code)
 - [Describe the AND, OR and XOR gates](#describe-the-and-or-and-xor-gates)
   - [AND gate](#and-gate)
@@ -32,16 +35,19 @@
   - [NOR gate](#nor-gate)
     - [Alternatives](#alternatives-5)
 - [Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)](#present-a-circuit-built-of-gates-that-will-perform-a-specific-function-depending-on-the-appropriate-combination-of-input-data)
-- [Describe the adder adding two bits, present its diagram](#describe-the-adder-adding-two-bits-present-its-diagram)
+- [Describe the adder adding two bits (half-adder), present its diagram](#describe-the-adder-adding-two-bits-half-adder-present-its-diagram)
+  - [Diagram](#diagram)
+  - [Circuit](#circuit)
+  - [Description](#description)
 - [Present a scheme of size comparator that comparing two binary values (equality, and which of them is larger) and describe comparators](#present-a-scheme-of-size-comparator-that-comparing-two-binary-values-equality-and-which-of-them-is-larger-and-describe-comparators)
 - [Draw a symbol, diagram with gates and describe how the SR latch works](#draw-a-symbol-diagram-with-gates-and-describe-how-the-sr-latch-works)
   - [Circuit symbol](#circuit-symbol)
   - [Diagram with two NOR gates](#diagram-with-two-nor-gates)
-  - [Description](#description)
+  - [Description](#description-1)
       - [Race condition](#race-condition)
 - [Describe the SR flip-flop](#describe-the-sr-flip-flop)
   - [The circuit symbol and the diagram](#the-circuit-symbol-and-the-diagram)
-  - [Description](#description-1)
+  - [Description](#description-2)
 - [Describe the D flip-flop and T flip-flop](#describe-the-d-flip-flop-and-t-flip-flop)
   - [D flip-flop](#d-flip-flop)
   - [T flip-flop](#t-flip-flop)
@@ -54,12 +60,12 @@
     - [1. Truth table of an OR gate<br>](#1-truth-table-of-an-or-gatebr)
     - [2. Karnaugh map of the truth table<br>](#2-karnaugh-map-of-the-truth-tablebr)
     - [3. Grouping](#3-grouping)
-    - [Minimized function](#minimized-function)
+    - [4. Minimized function](#4-minimized-function)
   - [Example: K-map of a truth table](#example-k-map-of-a-truth-table)
-    - [Truth table](#truth-table)
-    - [K-map](#k-map)
-    - [Minimized function](#minimized-function-1)
-    - [Diagram](#diagram)
+    - [1. Truth table](#1-truth-table)
+    - [2. K-map](#2-k-map)
+    - [3. Minimized function](#3-minimized-function)
+    - [4. Diagram](#4-diagram)
 - [Describe static-hazards](#describe-static-hazards)
   - [Static hazard](#static-hazard)
   - [Example of a static hazard](#example-of-a-static-hazard)
@@ -92,6 +98,19 @@ To obtain this complement we first need to get 1's complement then add 1. Exampl
 10111101 - 2's Complement<br>
 
 **NOTE: Both in U1 and U2 a positive number is represented the same as NBC, negatives, as described above.**
+
+BCD and EXCESS-3 codes
+===
+## BCD
+In this code, each decimal digit is represented by 4 binary bits corresponding to that digit. Example:<br>
+67 - decimal<br>
+0110 0111 - BCD code <br>
+
+## Excess-3
+It is a modified BCD code, instead of representing the digit itself, we represent digit greater than original by 3. Example:<br>
+67 - decimal<br>
+9 10 - digits increased by 3<br>
+1001 1010 - Excess-3 <br>
 
 Present the given number in hexadecimal code
 ===
@@ -144,19 +163,52 @@ Numbers in binary are multiplied similarly to decimal, we simply rewrite the fir
 
 Adding two numbers in the BCD and EXCESS-3 code
 ===
-## BCD
-In this code, each decimal digit is represented by 4 binary bits corresponding to that digit. Example:<br>
-67 - decimal<br>
-0110 0111 - BCD code <br>
 
-## Excess-3
-It is a modified BCD code, instead of representing the digit itself, we represent digit greater than original by 3. Example:<br>
-67 - decimal<br>
-9 10 - digits increased by 3<br>
-1001 1010 - Excess-3 <br>
+## Addition in BCD
+Like other number system in BCD arithmetical operation may be required. BCD is a numerical code which has several rules for addition.
+1. At first the given number are to be added using the rule of binary.
+   
+2. In second step we have to judge the result of addition. Here we check if any of the 4 bit groups are larger than 9 or 1001.
+   
+3. If the four bit result of addition is greater than 9 and if a carry bit is present in the result then it is invalid and we have to add 6 whose binary equivalent is
+(0110)2 to the result of addition. Then the resultant that we would get will be a
+valid binary coded number.
+
+Example:<br>
+0110 0111 67<br>
+0010 1001 +29<br>
+
+1001 0000 - because we had a carry we need to add 6<br>
+0000 0110<br>
+
+1001 0110 96 decimal <br>
+
+## Addition in EXCESS-3
+1. We have to convert the numbers (which are to be added) into excess 3 forms by adding 0011 with each of the four bit groups them or simply increasing them by 3.
+   
+2. Now the two numbers are added using the basic laws of binary addition, there is no exception for this method.
+   
+3. Now which of the four groups have produced a carry we have to add 0011
+with them and subtract 0011 from the groups which have not produced a carry during the addition.
+
+4. The result which we have obtained after this operation is in Excess 3 form and this is our desired result.
+   
+<br>
+Example:<br>
+1001 1010 67(in Excess-3)<br>
+0101 1100 29(in Excess-3)<br>
+
+1111 &nbsp;&nbsp;0110 the left group did not produce a carry we subtract 0011 from it<br>
+-0011 +0011
+the right one did create a carry so we add 0011
+
+1100 1001 96(written in Excess-3)
 
 Negating numbers in the BCD and EXCESS-3 code
 ===
+We negate a Excess-3 or BCD by performing 2's compliment on it.
+
+NOTE: in most cases the first bit of a number written in some sort of binary notation signifies the sign: 1 being negative, and 0 positive, here it is no exception .
 
 Describe the AND, OR and XOR gates
 ===
@@ -289,8 +341,24 @@ NAND construction |
 Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)
 ===
 
-Describe the adder adding two bits, present its diagram
+Describe the adder adding two bits (half-adder), present its diagram
 ===
+## Diagram
+<img src="images/half-adder-diagram.png" style="max-width: 400px">
+
+## Circuit
+<img src="images/half-adder-circuit.png" style="max-width: 400px">
+
+## Description
+This the circuit is of combinational type. The two inputs of binary are applied for which it results in two binary outputs. When the addition of inputs takes place the resultant generates a "Sum" and "Carry". 
+
+| A   | B   | S   | C   |
+| --- | --- | --- | --- |
+| 0   | 0   | 0   | 0   |
+| 0   | 1   | 1   | 0   |
+| 1   | 0   | 1   | 0   |
+| 1   | 1   | 0   | 1   |
+
 
 Present a scheme of size comparator that comparing two binary values (equality, and which of them is larger) and describe comparators
 ===
@@ -379,11 +447,11 @@ Rules of grouping:
 <img src="images/or-k-map-3.png" style="max-width: 400px;">
 
 
-### Minimized function
+### 4. Minimized function
 When writing a function using groups we use *(AND) for interactions within a group and +(OR) for interactions between groups.
 
 ## Example: K-map of a truth table
-### Truth table
+### 1. Truth table
 | A   | B   | C   | F   |
 | --- | --- | --- | --- |
 | 0   | 0   | 0   | 0   |
@@ -395,16 +463,16 @@ When writing a function using groups we use *(AND) for interactions within a gro
 | 1   | 1   | 0   | 1   |
 | 1   | 1   | 1   | 0   |
 
-### K-map
+### 2. K-map
 | C\AB | 00  | 01  | 11  | 10  |
 | ---- | --- | --- | --- | --- |
 | 0    | 0   | 1   | 1   | 1   |
 | 1    | 0   | 0   | 0   | 1   |
 
-### Minimized function
+### 3. Minimized function
 (B*(~C))+(A*(~B))
 
-### Diagram
+### 4. Diagram
 <img src="images/function-diagram-example.png" style="max-width: 400px">
 
 Describe static-hazards
