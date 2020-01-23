@@ -40,10 +40,10 @@
   - [Circuit](#circuit)
   - [Description](#description)
 - [Present a scheme of size comparator that comparing two binary values (equality, and which of them is larger) and describe comparators](#present-a-scheme-of-size-comparator-that-comparing-two-binary-values-equality-and-which-of-them-is-larger-and-describe-comparators)
-  - [Comparator](#comparator)
-  - [One-bit binary full comparator](#one-bit-binary-full-comparator)
-    - [Symbol](#symbol-1)
-    - [Diagram](#diagram)
+    - [Comparator](#comparator)
+    - [One-bit binary full comparator](#one-bit-binary-full-comparator)
+      - [Symbol](#symbol-1)
+      - [Diagram](#diagram)
 - [Draw a symbol, diagram with gates and describe how the SR latch works](#draw-a-symbol-diagram-with-gates-and-describe-how-the-sr-latch-works)
   - [Circuit symbol](#circuit-symbol)
   - [Diagram with two NOR gates](#diagram-with-two-nor-gates)
@@ -380,14 +380,14 @@ This the circuit is of combinational type. The two inputs of binary are applied 
 
 Present a scheme of size comparator that comparing two binary values (equality, and which of them is larger) and describe comparators
 ===
-## Comparator
+### Comparator
 Takes two numbers as input in binary form and determines whether one number is greater than, less than or equal to the other number. Comparators are used in CPUs and microcontrollers.
 
-## One-bit binary full comparator
-### Symbol
+### One-bit binary full comparator
+#### Symbol
 ![](https://i.stack.imgur.com/8ydzU.png)
 
-### Diagram
+#### Diagram
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/One_Bit_Comparator.png/220px-One_Bit_Comparator.png)<br>
 *An example utilizing NOT, AND and XNOR gates*
 
