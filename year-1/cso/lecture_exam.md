@@ -40,6 +40,10 @@
   - [Circuit](#circuit)
   - [Description](#description)
 - [Present a scheme of size comparator that comparing two binary values (equality, and which of them is larger) and describe comparators](#present-a-scheme-of-size-comparator-that-comparing-two-binary-values-equality-and-which-of-them-is-larger-and-describe-comparators)
+  - [Comparator](#comparator)
+  - [One-bit binary full comparator](#one-bit-binary-full-comparator)
+    - [Diagram](#diagram-1)
+    - [Circuit](#circuit-1)
 - [Draw a symbol, diagram with gates and describe how the SR latch works](#draw-a-symbol-diagram-with-gates-and-describe-how-the-sr-latch-works)
   - [Circuit symbol](#circuit-symbol)
   - [Diagram with two NOR gates](#diagram-with-two-nor-gates)
@@ -208,7 +212,7 @@ Negating numbers in the BCD and EXCESS-3 code
 ===
 We negate a Excess-3 or BCD by performing 2's compliment on it.
 
-NOTE: in most cases the first bit of a number written in some sort of binary notation signifies the sign: 1 being negative, and 0 positive, here it is no exception .
+**NOTE:** in most cases the first bit of a number written in some sort of binary notation signifies the sign: 1 being negative, and 0 positive, here it is no exception .
 
 Describe the AND, OR and XOR gates
 ===
@@ -362,6 +366,16 @@ This the circuit is of combinational type. The two inputs of binary are applied 
 
 Present a scheme of size comparator that comparing two binary values (equality, and which of them is larger) and describe comparators
 ===
+## Comparator
+Takes two numbers as input in binary form and determines whether one number is greater than, less than or equal to the other number. Comparators are used in CPUs and microcontrollers.
+
+## One-bit binary full comparator
+### Diagram
+![](https://i.stack.imgur.com/8ydzU.png)
+
+### Circuit
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/One_Bit_Comparator.png/220px-One_Bit_Comparator.png)<br>
+*An example utilizing NOT, AND and XNOR gates*
 
 Draw a symbol, diagram with gates and describe how the SR latch works
 ===
