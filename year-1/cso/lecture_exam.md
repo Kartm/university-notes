@@ -69,7 +69,26 @@
     - [Truth table](#truth-table-3)
 - [Describe the multiplexer and demultiplexer](#describe-the-multiplexer-and-demultiplexer)
   - [Multiplexer](#multiplexer)
+    - [**2-to-1 multiplexer**](#2-to-1-multiplexer)
+      - [Symbol](#symbol-4)
+      - [Circuit diagram](#circuit-diagram-3)
+      - [Boolean equation](#boolean-equation)
+      - [Truth table](#truth-table-4)
+    - [**4-to-1 multiplexer**](#4-to-1-multiplexer)
+      - [Symbol](#symbol-5)
+      - [Circuit diagram](#circuit-diagram-4)
+      - [Boolean equation](#boolean-equation-1)
+      - [Truth table](#truth-table-5)
   - [Demultiplexer](#demultiplexer)
+    - [**1-to-2 demultiplexer**](#1-to-2-demultiplexer)
+      - [Symbol](#symbol-6)
+      - [Circuit diagram](#circuit-diagram-5)
+      - [Boolean equation](#boolean-equation-2)
+      - [Truth table](#truth-table-6)
+    - [**1-to-4 demultiplexer**](#1-to-4-demultiplexer)
+      - [Symbol](#symbol-7)
+      - [Circuit diagram](#circuit-diagram-6)
+      - [Truth table](#truth-table-7)
 - [Present a Karnaugh map for a given function, minimize it, write canonical normal forms (product and summative) forms of a function after minimizing it, draw a diagram](#present-a-karnaugh-map-for-a-given-function-minimize-it-write-canonical-normal-forms-product-and-summative-forms-of-a-function-after-minimizing-it-draw-a-diagram)
   - [Karnaugh map](#karnaugh-map)
   - [Example: K-map for an OR gate](#example-k-map-for-an-or-gate)
@@ -492,11 +511,66 @@ As each incoming trigger alternately changes the set and reset inputs, the flip 
 Describe the multiplexer and demultiplexer
 ===
 ## Multiplexer
-todo
+Multiplexer (or mux), also known as a data selector, is a device that selects between input signals and forwards it to a single output line. A multiplexer of 2<sup>*n*</sup> inputs has *n* select lines, which are used to select which input line to send to the output. Can be considered as a multiple-input, single-output switch.
+
+Multiplexers are mainly used to increase the amount of data that can be sent over the network within a certain amount of time and bandwidth. Multiplexers can also be used to implement Boolean functions of multiple variables.
+
+### **2-to-1 multiplexer**
+
+#### Symbol
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/2-to-1-MUX.jpg)
+
+#### Circuit diagram
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/2-to-1-mux-logic-diagram.jpg)
+
+#### Boolean equation
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/0c325e85e0a3e66adc732761b5b277c56f6c116d)
+
+#### Truth table
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/2-to-1-MUX-truth-table.jpg)
+
+### **4-to-1 multiplexer**
+
+#### Symbol
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/4-to-1-MUX.jpg)
+
+#### Circuit diagram
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/4-to-1-MUX-logic-diagram.jpg)
+
+#### Boolean equation 
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/62a582066715146c263bf03c5c89cb2f5ba3bdd5)
+
+#### Truth table
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/4-to-1-MUX-Truth-Table-300x262.jpg)
+
 
 ## Demultiplexer
+A demultiplexer (or demux) is a device taking a single input and selecting signals of the output of the compatible mux, which is connected to the single input, and a shared selection line. A multiplexer is often used with a complementary demultiplexer on the receiving end. Can be considered as a single-input, multiple-output switch.
 
-todo
+### **1-to-2 demultiplexer**
+
+#### Symbol
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-2-demux.jpg)
+
+#### Circuit diagram
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-2-demux-logic-diagram.jpg)
+
+#### Boolean equation
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/0c325e85e0a3e66adc732761b5b277c56f6c116d)
+
+#### Truth table
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-2-demux-truth-table.jpg)
+
+### **1-to-4 demultiplexer**
+
+#### Symbol
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-4-Demux.jpg)
+
+#### Circuit diagram
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-4-Demux-logic-diagram.jpg)
+
+#### Truth table
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-4-Demux-truth-table.jpg)
 
 Present a Karnaugh map for a given function, minimize it, write canonical normal forms (product and summative) forms of a function after minimizing it, draw a diagram
 ===
