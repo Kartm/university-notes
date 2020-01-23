@@ -240,6 +240,7 @@ Implements logical conjunction. With inputs A and B and output C implements the 
 | NAND construction                                                                                                          | NOR construction                                                                                                         |
 | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/AND_from_NAND.svg/200px-AND_from_NAND.svg.png) | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/AND_from_NOR.svg/200px-AND_from_NOR.svg.png) |
+
 *If no specific AND gates are available, one can be made from NAND or NOR gates shown in the image above.*
 
 ## OR gate
@@ -260,6 +261,7 @@ Implements logical disjunction. With inputs A and B and output C implements the 
 | NAND construction                                                                                                        | NOR construction                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/OR_from_NAND.svg/200px-OR_from_NAND.svg.png) | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/OR_from_NOR.svg/200px-OR_from_NOR.svg.png) |
+
 *If no specific OR gates are available, one can be made from NAND or NOR gates shown in the image above.*
 
 ## XOR gate
@@ -280,6 +282,7 @@ Implements an exclusive or. With inputs A and B and output C implements the logi
 | NAND construction                                                                                                          | NOR construction                                                                                                             |
 | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/XOR_from_NAND.svg/300px-XOR_from_NAND.svg.png) | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/XOR_from_NOR_2.svg/380px-XOR_from_NOR_2.svg.png) |
+
 *If no specific XOR gates are available, one can be made from NAND or NOR gates shown in the image above.*
 
 Describe the XNOR, NAND and NOR gates
@@ -302,6 +305,7 @@ Implements logical equality. With inputs A and B and output C implements the log
 | NAND construction                                                                                                            | NOR construction                                                                                                           |
 | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/XNOR_from_NAND.svg/380px-XNOR_from_NAND.svg.png) | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/XNOR_from_NOR.svg/300px-XNOR_from_NOR.svg.png) |
+
 *If no specific XNOR gates are available, one can be made from NAND or NOR gates shown in the image above.*
 
 ## NAND gate
@@ -321,9 +325,10 @@ The function NAND(a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub>) is logically
 
 ### Alternatives
 
-NOR construction |
-- |
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/NAND_from_NOR.svg/280px-NAND_from_NOR.svg.png) |
+|NOR construction |
+|- |
+|![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/NAND_from_NOR.svg/280px-NAND_from_NOR.svg.png) |
+
 *If no specific NAND gates are available, one can be made from NOR gates shown in the image above.*
 
 ## NOR gate
@@ -343,9 +348,10 @@ The function NAND(a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub>) is logically
 
 ### Alternatives
 
-NAND construction |
-- |
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/NOR_from_NAND.svg/280px-NOR_from_NAND.svg.png) |
+| NAND construction |
+| - |
+|![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/NOR_from_NAND.svg/280px-NOR_from_NAND.svg.png) |
+
 *If no specific NOR gates are available, one can be made from NAND gates shown in the image above.*
 
 Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)
