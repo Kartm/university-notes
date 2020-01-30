@@ -35,25 +35,60 @@
   - [NOR gate](#nor-gate)
     - [Alternatives](#alternatives-5)
 - [Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)](#present-a-circuit-built-of-gates-that-will-perform-a-specific-function-depending-on-the-appropriate-combination-of-input-data)
+    - [Example 1](#example-1)
+      - [Truth table](#truth-table)
+      - [Circuit diagram](#circuit-diagram)
+    - [Example 2](#example-2)
+      - [Truth table](#truth-table-1)
+      - [Circuit diagram](#circuit-diagram-1)
 - [Describe the adder adding two bits (half-adder), present its diagram](#describe-the-adder-adding-two-bits-half-adder-present-its-diagram)
-  - [Diagram](#diagram)
+  - [Symbol](#symbol)
   - [Circuit](#circuit)
   - [Description](#description)
 - [Present a scheme of size comparator that comparing two binary values (equality, and which of them is larger) and describe comparators](#present-a-scheme-of-size-comparator-that-comparing-two-binary-values-equality-and-which-of-them-is-larger-and-describe-comparators)
+    - [Comparator](#comparator)
+    - [One-bit binary full comparator](#one-bit-binary-full-comparator)
+      - [Symbol](#symbol-1)
+      - [Diagram](#diagram)
 - [Draw a symbol, diagram with gates and describe how the SR latch works](#draw-a-symbol-diagram-with-gates-and-describe-how-the-sr-latch-works)
   - [Circuit symbol](#circuit-symbol)
   - [Diagram with two NOR gates](#diagram-with-two-nor-gates)
   - [Description](#description-1)
       - [Race condition](#race-condition)
 - [Describe the SR flip-flop](#describe-the-sr-flip-flop)
-  - [The circuit symbol and the diagram](#the-circuit-symbol-and-the-diagram)
-  - [Description](#description-2)
+    - [Description](#description-2)
+    - [Symbol and circuit diagram](#symbol-and-circuit-diagram)
 - [Describe the D flip-flop and T flip-flop](#describe-the-d-flip-flop-and-t-flip-flop)
   - [D flip-flop](#d-flip-flop)
+    - [Symbol](#symbol-2)
+    - [Diagram](#diagram-1)
+    - [Truth table](#truth-table-2)
   - [T flip-flop](#t-flip-flop)
+    - [Symbol](#symbol-3)
+    - [Circuit diagram](#circuit-diagram-2)
+    - [Truth table](#truth-table-3)
 - [Describe the multiplexer and demultiplexer](#describe-the-multiplexer-and-demultiplexer)
   - [Multiplexer](#multiplexer)
+    - [2-to-1 multiplexer](#2-to-1-multiplexer)
+      - [Symbol](#symbol-4)
+      - [Circuit diagram](#circuit-diagram-3)
+      - [Boolean equation](#boolean-equation)
+      - [Truth table](#truth-table-4)
+    - [4-to-1 multiplexer](#4-to-1-multiplexer)
+      - [Symbol](#symbol-5)
+      - [Circuit diagram](#circuit-diagram-4)
+      - [Boolean equation](#boolean-equation-1)
+      - [Truth table](#truth-table-5)
   - [Demultiplexer](#demultiplexer)
+    - [1-to-2 demultiplexer](#1-to-2-demultiplexer)
+      - [Symbol](#symbol-6)
+      - [Circuit diagram](#circuit-diagram-5)
+      - [Boolean equation](#boolean-equation-2)
+      - [Truth table](#truth-table-6)
+    - [1-to-4 demultiplexer](#1-to-4-demultiplexer)
+      - [Symbol](#symbol-7)
+      - [Circuit diagram](#circuit-diagram-6)
+      - [Truth table](#truth-table-7)
 - [Present a Karnaugh map for a given function, minimize it, write canonical normal forms (product and summative) forms of a function after minimizing it, draw a diagram](#present-a-karnaugh-map-for-a-given-function-minimize-it-write-canonical-normal-forms-product-and-summative-forms-of-a-function-after-minimizing-it-draw-a-diagram)
   - [Karnaugh map](#karnaugh-map)
   - [Example: K-map for an OR gate](#example-k-map-for-an-or-gate)
@@ -195,20 +230,20 @@ with them and subtract 0011 from the groups which have not produced a carry duri
    
 <br>
 Example:<br>
-1001 1010 67(in Excess-3)<br>
-0101 1100 29(in Excess-3)<br>
+1001 1010 67 (in Excess-3)<br>
+0101 1100 29 (in Excess-3)<br>
 
 1111 &nbsp;&nbsp;0110 the left group did not produce a carry we subtract 0011 from it<br>
 -0011 +0011
 the right one did create a carry so we add 0011
 
-1100 1001 96(written in Excess-3)
+1100 1001 96 (written in Excess-3)
 
 Negating numbers in the BCD and EXCESS-3 code
 ===
 We negate a Excess-3 or BCD by performing 2's compliment on it.
 
-NOTE: in most cases the first bit of a number written in some sort of binary notation signifies the sign: 1 being negative, and 0 positive, here it is no exception .
+**NOTE:** in most cases the first bit of a number written in some sort of binary notation signifies the sign: 1 being negative, and 0 positive, here it is no exception.
 
 Describe the AND, OR and XOR gates
 ===
@@ -230,6 +265,7 @@ Implements logical conjunction. With inputs A and B and output C implements the 
 | NAND construction                                                                                                          | NOR construction                                                                                                         |
 | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/AND_from_NAND.svg/200px-AND_from_NAND.svg.png) | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/AND_from_NOR.svg/200px-AND_from_NOR.svg.png) |
+
 *If no specific AND gates are available, one can be made from NAND or NOR gates shown in the image above.*
 
 ## OR gate
@@ -250,6 +286,7 @@ Implements logical disjunction. With inputs A and B and output C implements the 
 | NAND construction                                                                                                        | NOR construction                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/OR_from_NAND.svg/200px-OR_from_NAND.svg.png) | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/OR_from_NOR.svg/200px-OR_from_NOR.svg.png) |
+
 *If no specific OR gates are available, one can be made from NAND or NOR gates shown in the image above.*
 
 ## XOR gate
@@ -270,6 +307,7 @@ Implements an exclusive or. With inputs A and B and output C implements the logi
 | NAND construction                                                                                                          | NOR construction                                                                                                             |
 | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/XOR_from_NAND.svg/300px-XOR_from_NAND.svg.png) | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/XOR_from_NOR_2.svg/380px-XOR_from_NOR_2.svg.png) |
+
 *If no specific XOR gates are available, one can be made from NAND or NOR gates shown in the image above.*
 
 Describe the XNOR, NAND and NOR gates
@@ -292,6 +330,7 @@ Implements logical equality. With inputs A and B and output C implements the log
 | NAND construction                                                                                                            | NOR construction                                                                                                           |
 | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/XNOR_from_NAND.svg/380px-XNOR_from_NAND.svg.png) | ![alternate text](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/XNOR_from_NOR.svg/300px-XNOR_from_NOR.svg.png) |
+
 *If no specific XNOR gates are available, one can be made from NAND or NOR gates shown in the image above.*
 
 ## NAND gate
@@ -311,9 +350,10 @@ The function NAND(a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub>) is logically
 
 ### Alternatives
 
-NOR construction |
-- |
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/NAND_from_NOR.svg/280px-NAND_from_NOR.svg.png) |
+|NOR construction |
+|- |
+|![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/NAND_from_NOR.svg/280px-NAND_from_NOR.svg.png) |
+
 *If no specific NAND gates are available, one can be made from NOR gates shown in the image above.*
 
 ## NOR gate
@@ -333,17 +373,43 @@ The function NAND(a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub>) is logically
 
 ### Alternatives
 
-NAND construction |
-- |
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/NOR_from_NAND.svg/280px-NOR_from_NAND.svg.png) |
+| NAND construction |
+| - |
+|![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/NOR_from_NAND.svg/280px-NOR_from_NAND.svg.png) |
+
 *If no specific NOR gates are available, one can be made from NAND gates shown in the image above.*
 
 Present a circuit built of gates that will perform a specific function (depending on the appropriate combination of input data)
 ===
+### Example 1
+#### Truth table
+| Inputs | Output at
+
+| A   | B   | C   | D   | Q   |
+| --- | --- | --- | --- | --- |
+| 0   | 0   | 1   | 0   | 0   |
+| 0   | 1   | 1   | 1   | 1   |
+| 1   | 0   | 1   | 1   | 1   |
+| 1   | 1   | 0   | 0   | 1   |
+#### Circuit diagram
+![](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/boolean-boo6.gif)
+
+### Example 2
+#### Truth table
+| Inputs | Intermediates | Output
+
+| B   | A   | A.B | A&#773;‾₊&#773; B&#773; | Q   |
+| --- | --- | --- | ----------------------- | --- |
+| 0   | 0   | 0   | 1                       | 1   |
+| 0   | 1   | 0   | 0                       | 0   |
+| 1   | 0   | 0   | 0                       | 0   |
+| 1   | 1   | 1   | 0                       | 1   |
+#### Circuit diagram
+![](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/boolean-boo6.gif)
 
 Describe the adder adding two bits (half-adder), present its diagram
 ===
-## Diagram
+## Symbol
 <img src="images/half-adder-diagram.png" style="max-width: 400px">
 
 ## Circuit
@@ -362,6 +428,16 @@ This the circuit is of combinational type. The two inputs of binary are applied 
 
 Present a scheme of size comparator that comparing two binary values (equality, and which of them is larger) and describe comparators
 ===
+### Comparator
+Takes two numbers as input in binary form and determines whether one number is greater than, less than or equal to the other number. Comparators are used in CPUs and microcontrollers.
+
+### One-bit binary full comparator
+#### Symbol
+![](https://i.stack.imgur.com/8ydzU.png)
+
+#### Diagram
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/One_Bit_Comparator.png/220px-One_Bit_Comparator.png)<br>
+*An example utilizing NOT, AND and XNOR gates*
 
 Draw a symbol, diagram with gates and describe how the SR latch works
 ===
@@ -390,33 +466,113 @@ The latch is being told to simultaneously produce a high Q and a low Q. This pro
 
 Describe the SR flip-flop
 ===
-## The circuit symbol and the diagram
-![](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/sequential-seq1.gif)
-    
-## Description
-Flip-flop is a pair of latches (master and slave flop). 
+### Description
+It's very similar to a SR latch gate. The basic difference is that SR flip-flop has a gating or clocking mechanism.
 
-todo
+The output is changed (i.e. the stored data is changed) only when you provide an active clock signal to input EN ("Enable Input"). Otherwise, even if the S or R is active the data will not change. 
+
+### Symbol and circuit diagram
+![](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/sequential-seq16.gif)
 
 Describe the D flip-flop and T flip-flop
 ===
 ## D flip-flop
-The D-type flip-flop is a modified Set-Reset flip-flop with the addition of an inverter to prevent the S and R inputs from being at the same logic level.
+The D-type flip-flop is a modified Set-Reset flip-flop with the addition of an inverter to prevent the S and R inputs from being at the same logic level. 
 
+The D flip-flop captures the value of the D-input at a definite portion of the clock cycle (such as the rising edge of the clock). That captured value becomes the Q output. At other times, the output Q does not change. The D flip-flop can be viewed as a memory cell.
+
+### Symbol
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/D-Type_Flip-flop.svg/100px-D-Type_Flip-flop.svg.png)
+
+### Diagram
 ![](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/sequential-seq6.gif)
 
-## T flip-flop
+### Truth table
+| Clock       | D   | Q<sub>next</sub> |
+| ----------- | --- | ---------------- |
+| Rising edge | 0   | 0                |
+| Rising edge | 1   | 1                |
+| Non-rising  | X   | Q                |
 
-todo
+(X denotes a don't care condition, meaning the signal is irrelevant)
+
+## T flip-flop
+T flip-flop is also known as "Toggle flip-flop". It acts like a toggle switch. Toggling means ‘Changing the next state output to complement of the present state output’. The main disadvantage of T flip – flop is that the state of the flip – flop at an applied trigger pulse is known only when the previous state is known.
+
+As each incoming trigger alternately changes the set and reset inputs, the flip – flop toggles. So to complete one full cycle of output wave form it need two triggers. This means that the T flip flop produces the output at exactly half of the frequency of input frequency. So a T flip – flops will act as “Frequency Divider Circuit”.
+
+### Symbol
+<img src="https://www.electronicshub.org/wp-content/uploads/2015/06/Symbol-of-T-flip-flop.jpg" style="max-width: 400px;">
+
+### Circuit diagram
+<img src="https://www.electronicshub.org/wp-content/uploads/2015/06/Circuit-diagram-of-T-flip-flop-using-SR-latch.jpg" style="max-width: 400px;">
+
+### Truth table
+<img src="https://www.electronicshub.org/wp-content/uploads/2015/06/tff.jpg" style="max-width: 400px;">
 
 Describe the multiplexer and demultiplexer
 ===
 ## Multiplexer
-todo
+Multiplexer (or mux), also known as a data selector, is a device that selects between input signals and forwards it to a single output line. A multiplexer of 2<sup>*n*</sup> inputs has *n* select lines, which are used to select which input line to send to the output. Can be considered as a multiple-input, single-output switch.
+
+Multiplexers are mainly used to increase the amount of data that can be sent over the network within a certain amount of time and bandwidth. Multiplexers can also be used to implement Boolean functions of multiple variables.
+
+### 2-to-1 multiplexer
+
+#### Symbol
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/2-to-1-MUX.jpg)
+
+#### Circuit diagram
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/2-to-1-mux-logic-diagram.jpg)
+
+#### Boolean equation
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/0c325e85e0a3e66adc732761b5b277c56f6c116d)
+
+#### Truth table
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/2-to-1-MUX-truth-table.jpg)
+
+### 4-to-1 multiplexer
+
+#### Symbol
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/4-to-1-MUX.jpg)
+
+#### Circuit diagram
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/4-to-1-MUX-logic-diagram.jpg)
+
+#### Boolean equation 
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/62a582066715146c263bf03c5c89cb2f5ba3bdd5)
+
+#### Truth table
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/4-to-1-MUX-Truth-Table-300x262.jpg)
+
 
 ## Demultiplexer
+A demultiplexer (or demux) is a device taking a single input and selecting signals of the output of the compatible mux, which is connected to the single input, and a shared selection line. A multiplexer is often used with a complementary demultiplexer on the receiving end. Can be considered as a single-input, multiple-output switch.
 
-todo
+### 1-to-2 demultiplexer
+
+#### Symbol
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-2-demux.jpg)
+
+#### Circuit diagram
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-2-demux-logic-diagram.jpg)
+
+#### Boolean equation
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/0c325e85e0a3e66adc732761b5b277c56f6c116d)
+
+#### Truth table
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-2-demux-truth-table.jpg)
+
+### 1-to-4 demultiplexer
+
+#### Symbol
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-4-Demux.jpg)
+
+#### Circuit diagram
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-4-Demux-logic-diagram.jpg)
+
+#### Truth table
+![](https://www.electronicshub.org/wp-content/uploads/2015/07/1-to-4-Demux-truth-table.jpg)
 
 Present a Karnaugh map for a given function, minimize it, write canonical normal forms (product and summative) forms of a function after minimizing it, draw a diagram
 ===
@@ -497,3 +653,12 @@ If no delays were to occur, then the circuit would function normally. However, n
 Now we know roughly how the hazard is occurring, for a clearer picture and the solution on how to solve this problem, we would look to the Karnaugh map. The two gates are shown by solid rings, and the hazard can be seen under the dashed ring. A theorem proved by Huffman tells us that by adding a redundant loop 'X2X3' this will eliminate the hazard.
 
 So our original function is now: f = X1 * X2 + X1' * X3 + X2 * X3
+
+*****
+
+Sources:
+- https://electronics-tutorials.ws
+- https://wikipedia.org
+- https://quora.com
+- https://en.wikibooks.org
+- https://hyperphysics.phy-astr.gsu.edu
