@@ -24,6 +24,10 @@
     - [**kill** - wysyła podany sygnał do danego procesu](#kill---wysyła-podany-sygnał-do-danego-procesu)
     - [**finger** - sprawdzanie informacji o użytkowniku i wypisywanie wszystkich użytkowników](#finger---sprawdzanie-informacji-o-użytkowniku-i-wypisywanie-wszystkich-użytkowników)
 - [Vim](#vim)
+    - [Kopiowanie](#kopiowanie)
+    - [Usuwanie](#usuwanie)
+    - [Wyjście z vima](#wyjście-z-vima)
+- [Źródła:](#Źródła)
 
 # Ścieżki
 
@@ -219,7 +223,24 @@ Każdy sygnał posiada odpowiedni numer, który można przekazać zamiast jego n
 
 # Vim
 
-Źródła:
+### Kopiowanie
+
+- **yy** kopiuje linię do schowka
+- **Y** kopiuje tekst do końca linii
+- **p** wkleja zawartość schowka za kursorem
+- **P** wkleja zawartość schowka przed kursorem
+
+### Usuwanie
+
+- **x** usuwa zaznaczony kawałek tekstu
+
+### Wyjście z vima
+
+Jeśli jesteś w trybie edytowania, najpierw wciśnij `ESC`.
+
+Następnie wpisz `:wq` i zatwierdź Enterem. Ta komenda zapisuje plik i wychodzi z niego.
+
+# Źródła:
 
 - http://info.ee.pw.edu.pl/
 - http://www.cybertech.net.pl/
