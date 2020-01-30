@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Spis treści</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h2 id="spis-treści">Spis treści</h2>
+<ul>
+<li><a href="#%C5%9Acie%C5%BCki">Ścieżki</a>
+<ul>
+<li><a href="#%C5%9Acie%C5%BCki-bezwzgl%C4%99dne">Ścieżki bezwzględne</a></li>
+<li><a href="#%C5%9Acie%C5%BCki-wzgl%C4%99dne">Ścieżki względne</a></li>
+</ul>
+</li>
+<li><a href="#uprawnienia">Uprawnienia</a>
+<ul>
+<li><a href="#oznaczenia">Oznaczenia</a></li>
+<li><a href="#przyk%C5%82ad">Przykład</a></li>
+<li><a href="#chmod---nadawanie-uprawnie%C5%84">Chmod - nadawanie uprawnień</a></li>
+<li><a href="#chmod---nadawanie-uprawnie%C5%84-%C3%B3semkowo">Chmod - nadawanie uprawnień ósemkowo</a></li>
+</ul>
+</li>
+<li><a href="#przydatne-komendy">Przydatne komendy</a>
+<ul>
+<li><a href="#pwd---wy%C5%9Bwietlenie-%C5%9Bcie%C5%BCki-dost%C4%99pu-do-bie%C5%BC%C4%85cego-katalogu"><strong>pwd</strong> - wyświetlenie ścieżki dostępu do bieżącego katalogu</a></li>
+<li><a href="#touch---tworzenie-nowego-pliku-lub-zmiana-daty-modyfikacji"><strong>touch</strong> - tworzenie nowego pliku lub zmiana daty modyfikacji</a></li>
+<li><a href="#mkdir---tworzenie-katalogu"><strong>mkdir</strong> - tworzenie katalogu</a></li>
+<li><a href="#sort---sortuje-zawarto%C5%9B%C4%87-pliku-tekstowego"><strong>sort</strong> - sortuje zawartość pliku tekstowego</a>
+<ul>
+<li><a href="#przydatne-opcje">Przydatne opcje:</a></li>
+<li><a href="#przyk%C5%82ady-u%C5%BCycia">Przykłady użycia</a></li>
+</ul>
+</li>
+<li><a href="#grep---przeszukiwanie-tekstu-linijka-po-linijce"><strong>grep</strong> - przeszukiwanie tekstu linijka po linijce</a></li>
+<li><a href="#wc---liczy-ilo%C5%9B%C4%87-znak%C3%B3w-s%C5%82%C3%B3w-i-linii-w-pliku"><strong>wc</strong> - liczy ilość znaków, słów i linii w pliku</a></li>
+<li><a href="#less---wy%C5%9Bwietla-zawarto%C5%9B%C4%87-pliku-strona-po-stronie"><strong>less</strong> - wyświetla zawartość pliku strona po stronie</a></li>
+<li><a href="#cat---wy%C5%9Bwietla-zawarto%C5%9B%C4%87-pliku"><strong>cat</strong> - wyświetla zawartość pliku</a></li>
+<li><a href="#passwd---zmienia-has%C5%82o-u%C5%BCytkownika"><strong>passwd</strong> - zmienia hasło użytkownika</a></li>
+<li><a href="#ps---wy%C5%9Bwietla-list%C4%99-proces%C3%B3w"><strong>ps</strong> - wyświetla listę procesów</a></li>
+<li><a href="#kill---wysy%C5%82a-podany-sygna%C5%82-do-danego-procesu"><strong>kill</strong> - wysyła podany sygnał do danego procesu</a></li>
+<li><a href="#finger---sprawdzanie-informacji-o-u%C5%BCytkowniku-i-wypisywanie-wszystkich-u%C5%BCytkownik%C3%B3w"><strong>finger</strong> - sprawdzanie informacji o użytkowniku i wypisywanie wszystkich użytkowników</a></li>
+</ul>
+</li>
+<li><a href="#vim">Vim</a>
+<ul>
+<li><a href="#kopiowanie">Kopiowanie</a></li>
+<li><a href="#usuwanie">Usuwanie</a></li>
+<li><a href="#wyj%C5%9Bcie-z-vima">Wyjście z vima</a></li>
+</ul>
+</li>
+<li><a href="#%C5%B9r%C3%B3d%C5%82a">Źródła:</a></li>
+</ul>
+<h1 id="Ścieżki">Ścieżki</h1>
+<h2 id="Ścieżki-bezwzględne">Ścieżki bezwzględne</h2>
+<p>Bezwzględna ścieżka dostępu rozpoczyna się od folderu głównego. Folder główny jest pojedynczym folderem, od którego rozpoczyna się cała hierarchia. Pierwszym znakiem ścieżki bezwzględnej jest ukośnik (/). Przykład bezwzględnej ścieżki dostępu do pliku &quot;list&quot;:</p>
+<blockquote>
+<p>/home/s/prow/p-k1g2/chaos</p>
+</blockquote>
+<h2 id="Ścieżki-względne">Ścieżki względne</h2>
+<p>Jeśli ścieżka dostępu nie rozpoczyna się ukośnikiem, jest ścieżką względną.</p>
+<p>Względna ścieżka dostępu przedstawia lokalizację pliku lub folderu względem folderu bieżącego. Aby z folderu bieżącego przejść niżej w strukturze drzewa, nie trzeba podawać pełnej ścieżki dostępu. Wystarczy wpisać ścieżkę rozpoczynając od nazwy następnego folderu. Na przykład, jeżeli bieżącym folderem jest /usr/dt, a użytkownik zamierza przejść do folderu /usr/dt/config/listy, wystarczy wprowadzić względną ścieżkę dostępu:</p>
+<blockquote>
+<p>config/listy</p>
+</blockquote>
+<h1 id="uprawnienia">Uprawnienia</h1>
+<h2 id="oznaczenia">Oznaczenia</h2>
+<ul>
+<li><strong>u</strong> - użytkownik</li>
+<li><strong>g</strong> - group (grupa)</li>
+<li><strong>o</strong> - other (inni)</li>
+<li><strong>a</strong> - all (wszyscy)</li>
+<li><strong>r</strong> - uprawnienie do odczytu pliku</li>
+<li><strong>w</strong> - uprawnienie do modyfikacji pliku</li>
+<li><strong>x</strong> - uprawnienie do wykonywania/uruchamiania pliku</li>
+</ul>
+<h2 id="przykład">Przykład</h2>
+<p>Użyjemy komendy <code>ls -lga</code> w folderze &quot;linuks&quot;:</p>
+<blockquote>
+<p>drwxr-xr-x 2 root root 512 May 3 00:37 linuks</p>
+</blockquote>
+<p>Oto opis uprawnień:</p>
+<table>
+<thead>
+<tr>
+<th>d</th>
+<th>rwx</th>
+<th>r-x</th>
+<th>r-x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d = directory (folder)</td>
+<td>u</td>
+<td>g</td>
+<td>o</td>
+</tr>
+</tbody>
+</table>
+<h2 id="chmod---nadawanie-uprawnień">Chmod - nadawanie uprawnień</h2>
+<ul>
+<li>Nadanie użytkownikowi wszystkich uprawnień
+<blockquote>
+<p>chmod u+rxw nazwa_pliku</p>
+</blockquote>
+</li>
+<li>Zabranie użytkownikowi wszystkich uprawnień
+<blockquote>
+<p>chmod u-rxw nazwa_pliku</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chmod---nadawanie-uprawnień-ósemkowo">Chmod - nadawanie uprawnień ósemkowo</h2>
+<p>Nadawac uprawnienia można również wpisując odpowiednią liczbę. Trzeba ją policzyć w następujący sposób:</p>
+<ul>
+<li><strong>r</strong> = 4 -odczyt</li>
+<li><strong>w</strong> = 2 modyfikacja</li>
+<li><strong>x</strong> = 1 wykonywanie</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>d</th>
+<th>rwx</th>
+<th>r-x</th>
+<th>r-x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> </td>
+<td>u</td>
+<td>g</td>
+<td>o</td>
+</tr>
+<tr>
+<td> </td>
+<td>4 + 2 + 1</td>
+<td>4 + 0 + 1</td>
+<td>4 + 0 + 1</td>
+</tr>
+<tr>
+<td> </td>
+<td>=7</td>
+<td>=5</td>
+<td>=5</td>
+</tr>
+</tbody>
+</table>
+<p>Aby je nadać, wystarczy użyć komendy:</p>
+<blockquote>
+<p>chmod 755 nazwa_pliku</p>
+</blockquote>
+<h1 id="przydatne-komendy">Przydatne komendy</h1>
+<h3 id="pwd---wyświetlenie-ścieżki-dostępu-do-bieżącego-katalogu"><strong>pwd</strong> - wyświetlenie ścieżki dostępu do bieżącego katalogu</h3>
+<p>Przykładowe użycie: <code>pwd</code></p>
+<blockquote>
+<p>/tmp/KATALOG_ROBOCZY</p>
+</blockquote>
+<hr>
+<h3 id="touch---tworzenie-nowego-pliku-lub-zmiana-daty-modyfikacji"><strong>touch</strong> - tworzenie nowego pliku lub zmiana daty modyfikacji</h3>
+<p>Polecenie zmienia datę modyfikacji lub ostatniego dostępu pliku. Wywołane z argumentem tworzy (jeżeli jeszcze nie istnieje) nowy plik o takiej jak argument nazwie i ustala jego daty modyfikacji i ostatniego dostępu na aktualną datę.</p>
+<p>Wywołanie <code>touch plik2</code> tworzy nowy plik <code>plik2</code>.</p>
+<hr>
+<h3 id="mkdir---tworzenie-katalogu"><strong>mkdir</strong> - tworzenie katalogu</h3>
+<p>Polecenie to bez żadnych dodatkowych opcji tworzy katalog podany jako argument. Jeśli argumentów będzie więcej, to odpowiednia liczba katalogów zostanie utworzona.</p>
+<ul>
+<li>Wywołanie <code>mkdir katalog_1</code> stworzy katalog o nazwie <code>katalog_1</code>.</li>
+<li>Wywołanie <code>mkdir -m 600 katalog_1 katalog_2</code> stworzy dwa katalogi <code>katalog_1</code> oraz <code>katalog_2</code> o ósemkowych prawach dostępu <code>600</code> (właściciel ma prawa do odczytu i zapisu, nikt inny nie ma dostępu do pliku).</li>
+</ul>
+<hr>
+<h3 id="sort---sortuje-zawartość-pliku-tekstowego"><strong>sort</strong> - sortuje zawartość pliku tekstowego</h3>
+<h4 id="przydatne-opcje">Przydatne opcje:</h4>
+<ul>
+<li>-r sortowanie w odwrotnej kolejności</li>
+<li>-u usuwanie duplikatów</li>
+<li>-f nie rozróżnianie małych i dużych liter</li>
+<li>-n sortowanie liczb (domyślnie dane sortowane traktowane są jako ciągi znaków)</li>
+</ul>
+<h4 id="przykłady-użycia">Przykłady użycia</h4>
+<ul>
+<li>posortowanie linii zawartych w pliku dane.txt i przesłanie wyniku do pliku posortowane.txt
+<blockquote>
+<p>sort dane.txt &gt; posortowane.txt</p>
+</blockquote>
+</li>
+<li>sortowanie kolumnami<br>
+Opcja <strong>+liczba</strong> pozwala pominąć przy sortowaniu określoną liczbę pól (pola standardowo są rozdzielone białymi znakami tj. spacjami, tabami etc.).<br><br>Wyświetlenie posortowanej listy plików według piątej kolumny otrzymanej za pomocą polecenia ls -l:
+<blockquote>
+<p>ls -l | sort +4 -n</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="grep---przeszukiwanie-tekstu-linijka-po-linijce"><strong>grep</strong> - przeszukiwanie tekstu linijka po linijce</h3>
+<p>Wyświetla pasujące linijki.</p>
+<ul>
+<li><code>grep 'slowo1\|slowo2'</code> wyszuka linie zawierające 'slowo1' lub 'slowo2'.</li>
+<li>grep można łączyć za pomocą pipe: <code>cat plik | grep 'abc'</code> wyświetli wszystkie linijki z pliku <code>plik</code> zawierające <code>abc</code>.</li>
+</ul>
+<hr>
+<h3 id="wc---liczy-ilość-znaków-słów-i-linii-w-pliku"><strong>wc</strong> - liczy ilość znaków, słów i linii w pliku</h3>
+<p>Przykład:</p>
+<ul>
+<li>wywołanie <code>wc dane.txt</code> wyświetli ilość znaków, słów i linii w pliku <code>dane.txt</code>
+<blockquote></blockquote>
+</li>
+<li>wywołanie <code>wc -l *.txt</code> wyświetli liczbę linii we wszystkich plikach o rozszerzeniu .txt znajdujących się w bieżącym katalogu.</li>
+</ul>
+<hr>
+<h3 id="less---wyświetla-zawartość-pliku-strona-po-stronie"><strong>less</strong> - wyświetla zawartość pliku strona po stronie</h3>
+<p>Pozwala poruszać się po pliku zarówno w przód jak i w tył.</p>
+<p>Przykładowe użycie: <code>less plik.txt</code>.</p>
+<hr>
+<h3 id="cat---wyświetla-zawartość-pliku"><strong>cat</strong> - wyświetla zawartość pliku</h3>
+<p>Przykład:</p>
+<ul>
+<li>wyświetlenie zawartości pliku <code>passwd</code>
+<blockquote>
+<p>cat /etc/passwd</p>
+</blockquote>
+</li>
+<li>łączenie plików <code>plik1</code>, <code>plik2</code>, <code>plik3</code> w jedną całość o nazwie <code>plik4</code>
+<blockquote>
+<p>cat plik1 plik2 plik3 &gt; plik4</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="passwd---zmienia-hasło-użytkownika"><strong>passwd</strong> - zmienia hasło użytkownika</h3>
+<p>Wywołanie <code>passwd</code> pozwala zmienić hasło aktualnie zalogowanego użytkownika.</p>
+<p>Najpierw użytkownik musi wpisać swoje aktualne hasło, po czym dwukrotnie wpisać nowe. Jeśli wpisane hasło w pierwszej oraz w drugiej próbie są identyczne, hasło użytkownika zostało zmienione.</p>
+<hr>
+<h3 id="ps---wyświetla-listę-procesów"><strong>ps</strong> - wyświetla listę procesów</h3>
+<p>Bez podania dodatkowych opcji pokazuje wszystkie procesy, związane z bieżącym użytkownikiem i aktywną sesją naszego terminalu.</p>
+<ul>
+<li><code>ps aux</code> pokazuje procesy wszystkich użytkowników</li>
+<li><code>ps -ef</code> również pokazuje wszystkie procesy, lecz w mniej przyjaznej dla użytkownika formie<br>
+<ul>
+<li>-e - wyświetla wszystkie uruchomione procesy</li>
+<li>-f - wyświetla szczegółowe informacje o uruchomionych procesach</li>
+<li>-u - wyświetla uruchomione procesy danego użytkownika</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="kill---wysyła-podany-sygnał-do-danego-procesu"><strong>kill</strong> - wysyła podany sygnał do danego procesu</h3>
+<p>PID_procesu
+Każdy sygnał posiada odpowiedni numer, który można przekazać zamiast jego nazwy. Na przykład, można skorzystać z:</p>
+<ul>
+<li>
+<p>„-15” zamiast „-TERM”</p>
+</li>
+<li>
+<p>„-9” zamiast „-KILL”.</p>
+</li>
+<li>
+<p>Poniższe polecenie wysyła sygnał TERM do wykonywanego procesu. TERM prosi u procesu grzecznie zakończyć pracę. To pozwoli dokonać czyszczenie działających procesów i wyjść bez dodatkowych problemów.</p>
+<blockquote>
+<p>kill PID_procesu</p>
+</blockquote>
+</li>
+<li>
+<p>Jeśli program zachowuje się nie tak, jak oczekiwaliśmy, i nie chce zakończyć swojej pracę, możemy to wymusić:</p>
+<blockquote>
+<p>kill -9 PID_procesu</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="finger---sprawdzanie-informacji-o-użytkowniku-i-wypisywanie-wszystkich-użytkowników"><strong>finger</strong> - sprawdzanie informacji o użytkowniku i wypisywanie wszystkich użytkowników</h3>
+<ul>
+<li><code>finger</code> wypisuje wszystkich zalogowanych użytkowników</li>
+<li><code>finger @komputer</code> – użytkownicy zalogowani na komputerze o nazwie 'komputer;</li>
+<li><code>finger username</code> – wypisuje informacje o użytkowniku 'username' i wszystkie terminale na których jest zalogowany</li>
+<li><code>finger Marek</code> – wypisuje informacje o wszystkich użytkownikach o imieniu 'marek'</li>
+</ul>
+<h1 id="vim">Vim</h1>
+<h3 id="kopiowanie">Kopiowanie</h3>
+<ul>
+<li><strong>yy</strong> kopiuje linię do schowka</li>
+<li><strong>Y</strong> kopiuje tekst do końca linii</li>
+<li><strong>p</strong> wkleja zawartość schowka za kursorem</li>
+<li><strong>P</strong> wkleja zawartość schowka przed kursorem</li>
+</ul>
+<h3 id="usuwanie">Usuwanie</h3>
+<ul>
+<li><strong>x</strong> usuwa zaznaczony kawałek tekstu</li>
+</ul>
+<h3 id="wyjście-z-vima">Wyjście z vima</h3>
+<p>Jeśli jesteś w trybie edytowania, najpierw wciśnij <code>ESC</code>.</p>
+<p>Następnie wpisz <code>:wq</code> i zatwierdź Enterem. Ta komenda zapisuje plik i wychodzi z niego.</p>
+<h1 id="Źródła">Źródła:</h1>
+<ul>
+<li><a href="http://info.ee.pw.edu.pl/">http://info.ee.pw.edu.pl/</a></li>
+<li><a href="http://www.cybertech.net.pl/">http://www.cybertech.net.pl/</a></li>
+<li><a href="https://hostovita.pl/">https://hostovita.pl/</a></li>
+<li><a href="https://www.arturpyszczuk.pl/">https://www.arturpyszczuk.pl/</a></li>
+<li><a href="http://www.is.umk.pl/">http://www.is.umk.pl/</a></li>
+<li><a href="https://www.astrouw.edu.pl/">https://www.astrouw.edu.pl/</a></li>
+</ul>
+
+    </body>
+    </html>
